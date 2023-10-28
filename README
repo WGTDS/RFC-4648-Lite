@@ -1,0 +1,27 @@
+###############################################################
+
+    General Purpose Base[16|32|64] [En|De]coder
+
+    "White Guy That Don't Smile"
+    2023/10/28, Saturday, October 28th; 0506 HOURS
+
+###############################################################
+
+    DESCRIPTION
+
+    The software provides a non-strict solution for
+    processing continuous RFC 4648 data streams
+    using File IO.
+
+###############################################################
+
+    Compiler Flags:
+        -ansi
+        -Wall
+        -Wextra
+        -Wpedantic
+        -Werror
+        -Os
+        -s
+
+###############################################################
