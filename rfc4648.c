@@ -28,7 +28,7 @@
     General Purpose Base[16|32|64] [En|De]coder
 
     Author  : White Guy That Don't Smile
-    Date    : 2023/10/28, Saturday, October 28th; 0506 HOURS
+    Date    : 2024/01/12, Friday, January 12th; 0812 HOURS
     License : UnLicense | Public Domain
 
     Base16: [0-F]
@@ -65,8 +65,9 @@ unsigned o; /* out */
 
 static void set_indices(char *p, int c, unsigned amount)
 {
-    while (amount--) {
+    while (amount) {
         *p++ = c++;
+        --amount;
     }
 
     return;
@@ -162,6 +163,7 @@ static void base32_encode(void)
 
         o = b32_block_size_enc[n];
         fwrite(obuf, 1, o, ofile);
+        memset(ibuf, 0, 5);
     } while (1);
 
     if (use_padding == 'Y') {
@@ -235,6 +237,7 @@ static void base64_encode(void)
 
         o = b64_block_size_enc[n];
         fwrite(obuf, 1, o, ofile);
+        memset(ibuf, 0, 6);
     } while (1);
 
     if (use_padding == 'Y') {
